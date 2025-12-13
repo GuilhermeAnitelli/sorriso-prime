@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorriso Prime - Odontologia Especializada</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Sorriso Prime</div>
+            <nav>
+                <a href="#">Tratamentos</a> |
+                <a href="#">Especialistas</a> |
+                <a href="#" class="btn-nav">Agendar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-layout">
+            <div class="hero-text">
+                <h1>Transforme seu sorriso com tecnologia de ponta.</h1>
+                <p>Implantes, lentes de contato e ortodontia invisível. Recupere sua autoestima.</p>
+                <a href="#contato" class="btn-primary">Agendar Avaliação</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80"
+                    alt="Mulher sorrindo">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="ph ph-tooth icon"></i>
+                    <h3>Implantes</h3>
+                    <p>Reabilitação oral completa com materiais importados e durabilidade garantida.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="ph ph-sparkle icon"></i>
+                    <h3>Clareamento</h3>
+                    <p>Tecnologia a laser para resultados visíveis logo na primeira sessão.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="ph ph-shield-check icon"></i>
+                    <h3>Ortodontia</h3>
+                    <p>Alinhadores invisíveis e aparelhos estéticos para corrigir seu sorriso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <h2>Agende sua consulta</h2>
+            <form class="booking-form" action="https://formspree.io/f/mblnqvbo" method="POST">
+
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" name="nome" placeholder="Ex: João Silva" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Telefone / WhatsApp</label>
+                    <input type="tel" name="telefone" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Qual seu interesse?</label>
+                    <select name="interesse">
+                        <option value="Avaliacao">Avaliação Geral</option>
+                        <option value="Implantes">Implantes</option>
+                        <option value="Clareamento">Clareamento</option>
+                        <option value="Ortodontia">Ortodontia</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Solicitar Agendamento</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Sorriso Prime. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

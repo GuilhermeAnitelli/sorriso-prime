@@ -35,9 +35,9 @@
                 Sorriso Prime
             </div>
             <nav>
-                <a href="#">Tratamentos</a> |
-                <a href="#">Especialistas</a> |
-                <a href="#" class="btn-nav">Agendar</a>
+                <a href="#services">Tratamentos</a>
+                <a href="#services">Especialistas</a>
+                <a href="#contato" class="btn-nav">Agendar</a>
             </nav>
         </div>
     </header>
@@ -52,13 +52,14 @@
 
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80"
-                    alt="Mulher sorrindo">
+                    alt="Paciente sorridente mostrando resultado de tratamento odontológico">
             </div>
         </div>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
         <div class="container">
+            <h2>Nossos Serviços</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <i class="ph ph-tooth icon"></i>
@@ -87,18 +88,19 @@
             <form class="booking-form" action="https://formspree.io/f/mblnqvbo" method="POST">
 
                 <div class="form-group">
-                    <label>Nome Completo</label>
-                    <input type="text" name="nome" placeholder="Ex: João Silva" required>
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" autocomplete="name" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Telefone / WhatsApp</label>
-                    <input type="tel" name="telefone" placeholder="(11) 99999-9999" required>
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Qual seu interesse?</label>
-                    <select name="interesse">
+                    <label for="interesse">Qual seu interesse?</label>
+                    <select id="interesse" name="interesse" required>
+                        <option value="">Selecione uma opção</option>
                         <option value="Avaliacao">Avaliação Geral</option>
                         <option value="Implantes">Implantes</option>
                         <option value="Clareamento">Clareamento</option>
@@ -111,7 +113,7 @@
         </div>
     </section>
     <footer>
-        <p>&copy; 2025 Sorriso Prime. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Sorriso Prime. Todos os direitos reservados.</p>
     </footer>
 
 </body>

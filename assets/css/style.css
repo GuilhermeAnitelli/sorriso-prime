@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #00BFA6;
     /* Verde Turquesa - Saúde */
@@ -40,11 +44,30 @@ h1 {
     margin-bottom: 1rem;
 }
 
+h2 {
+    font-family: var(--font-title);
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-family: var(--font-title);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
 nav a {
     color: var(--text-dark);
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
 }
 
 nav a.btn-nav {
@@ -52,6 +75,12 @@ nav a.btn-nav {
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a.btn-nav:hover {
+    background-color: #00a089;
+    transform: translateY(-2px);
 }
 
 section.hero {
@@ -74,8 +103,15 @@ footer {
     gap: 2rem;
 }
 
+.hero-image {
+    flex: 1.2;
+    min-width: 350px;
+}
+
 .hero-image img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
@@ -103,6 +139,12 @@ footer {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00a089;
+    transform: translateY(-2px);
 }
 
 .container {
@@ -238,23 +280,18 @@ footer {
     padding: 2rem;
     border: 1px solid #eee;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0, 191, 166, 0.1);
 }
 
 .service-card .icon {
     font-size: 3rem;
     margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    font-family: var(--font-title);
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
 }
 
 .service-card .icon {
@@ -262,12 +299,22 @@ footer {
     color: var(--primary-color);
     margin-bottom: 1rem;
     display: block;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .service-card:hover .icon {
     color: var(--secondary-color);
     transform: scale(1.1);
+}
+
+.service-card h3 {
+    margin-bottom: 0.8rem;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 header .container {
@@ -289,13 +336,381 @@ section.hero {
 
 
 /* Responsividade */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    /* Hero em tablet - manter lado a lado */
+    section.hero {
+        padding: 3rem 0 2rem 0;
+    }
+
+    .container .hero-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .container .hero-layout .hero-text {
+        flex: 0.9;
+        margin-right: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+    }
+
+    .container .hero-layout .hero-image {
+        flex: 1.1;
+        min-width: 320px;
+        max-width: 500px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .btn-primary {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.95rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .services {
+        padding: 3rem 0;
+    }
+}
+
+/* Smartphones grandes e tablets pequenos em portrait */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Header mobile */
+    header {
+        padding: 0.8rem 0;
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .logo i {
+        font-size: 1.7rem;
+    }
+
+    nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    nav a.btn-nav {
+        padding: 0.6rem 1.2rem;
+    }
+
+    /* Hero section mobile */
+    section.hero {
+        padding: 3rem 0;
+    }
+
     .container .hero-layout {
         flex-direction: column;
+        gap: 2rem;
     }
 
     .container .hero-layout .hero-text {
         margin-right: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+        padding: 0.9rem 1.8rem;
+        font-size: 1.05rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Serviços mobile */
+    .services {
+        padding: 3rem 0;
+    }
+
+    .services h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .service-card .icon {
+        font-size: 2.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Formulário mobile */
+    .contact-section {
+        padding: 3rem 0;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+        text-align: center;
         margin-bottom: 2rem;
+    }
+
+    .booking-form {
+        padding: 2rem 1.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .booking-form input,
+    .booking-form select {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .btn-submit {
+        padding: 1rem;
+        font-size: 1.05rem;
+        width: 100%;
+    }
+
+    /* Footer mobile */
+    footer {
+        padding: 1.5rem 1rem;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header extra small */
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+        margin: 0 0.3rem;
+    }
+
+    nav a.btn-nav {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hero extra small */
+    section.hero {
+        padding: 2rem 0;
+    }
+
+    .hero-text h1 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Serviços extra small */
+    .services {
+        padding: 2.5rem 0;
+    }
+
+    .services h2 {
+        font-size: 1.7rem;
+    }
+
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .service-card .icon {
+        font-size: 2.2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+
+    /* Formulário extra small */
+    .contact-section {
+        padding: 2.5rem 0;
+    }
+
+    .contact-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .booking-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .booking-form label {
+        font-size: 0.95rem;
+    }
+
+    .booking-form input,
+    .booking-form select {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-submit {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    /* Footer extra small */
+    footer {
+        padding: 1.2rem 1rem;
+        margin-top: 2.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Melhorias de touch e interatividade mobile */
+@media (max-width: 768px) {
+    /* Aumentar área de toque dos botões */
+    nav a,
+    .btn-nav,
+    .btn-primary,
+    .btn-submit {
+        min-height: 44px;
+        /* Área mínima recomendada para touch */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Melhorar espaçamento entre elementos clicáveis */
+    .form-group {
+        margin-bottom: 1.8rem;
+    }
+
+    /* Evitar zoom automático no iOS */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Orientação paisagem em dispositivos móveis */
+@media (max-width: 768px) and (orientation: landscape) {
+    section.hero {
+        padding: 2rem 0;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .container .hero-layout {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .container .hero-layout .hero-text {
+        flex: 1;
+        text-align: left;
+        margin-right: 1.5rem;
+    }
+
+    .hero-image {
+        flex: 1;
+        max-width: 400px;
+    }
+
+    .services {
+        padding: 2rem 0;
+    }
+
+    .contact-section {
+        padding: 2rem 0;
     }
 }

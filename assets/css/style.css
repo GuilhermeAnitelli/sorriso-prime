@@ -23,6 +23,12 @@ html {
     --font-body: 'Open Sans', sans-serif;
 }
 
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
 
 header {
     background-color: var(--white);
@@ -30,11 +36,10 @@ header {
     padding: 1rem 0;
 }
 
-body {
-    font-family: var(--font-body);
-    color: var(--text-dark);
-    line-height: 1.6;
-    background-color: var(--bg-light);
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
@@ -56,6 +61,12 @@ h3 {
     font-family: var(--font-title);
     color: var(--secondary-color);
     font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 nav a {
@@ -83,17 +94,30 @@ nav a.btn-nav:hover {
     transform: translateY(-2px);
 }
 
-section.hero {
-    background-color: var(--bg-light);
-    padding: 4rem 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-footer {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;     
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+/* Hero Section - CONSOLIDADO */
+section.hero {
+    background-color: var(--bg-light);
+    padding: 6rem 0;
 }
 
 .hero-layout {
@@ -103,17 +127,9 @@ footer {
     gap: 2rem;
 }
 
-.hero-image {
-    flex: 1.2;
-    min-width: 350px;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+.hero-text {
+    flex: 1;
+    margin-right: 2rem;
 }
 
 .hero-text h1 {
@@ -127,6 +143,19 @@ footer {
     color: var(--text-light);
     margin-bottom: 2.5rem;
     max-width: 90%;
+}
+
+.hero-image {
+    flex: 1.2;
+    min-width: 350px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary {
@@ -147,122 +176,7 @@ footer {
     transform: translateY(-2px);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.container .hero-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.container .hero-layout .hero-text {
-    flex: 1;
-    margin-right: 2rem;
-}
-
-.container .hero-layout .hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.container .hero-layout .hero-text p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-}
-
-.container .hero-layout .hero-image {
-    flex: 1;
-}
-
-.container .hero-layout .hero-image img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.contact-section {
-    background-color: var(--white);
-    padding: 4rem 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;     
-    font-family: var(--font-title);
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.logo i {
-    font-size: 2rem;
-}
-
-.booking-form {
-    background-color: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 191, 166, 0.15);
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.booking-form label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-}
-
-.booking-form input,
-.booking-form select {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    background-color: #FAFAFA;
-    transition: border 0.3s ease;
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.booking-form input:focus,
-.booking-form select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    background-color: var(--white);
-}
-
-.btn-submit {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.btn-submit:hover {
-    background-color: #005f91;
-    transform: translateY(-2px);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.5rem;
-    width: 100%;
-}
-
+/* Services Section */
 .services {
     padding: 5rem 0;
     background-color: var(--white);
@@ -291,11 +205,6 @@ footer {
 
 .service-card .icon {
     font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.service-card .icon {
-    font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
     display: block;
@@ -317,25 +226,84 @@ footer {
     line-height: 1.6;
 }
 
-header .container {
+/* Contact Section */
+.contact-section {
+    background-color: var(--white);
+    padding: 4rem 0;
+}
+
+.booking-form {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 191, 166, 0.15);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.booking-form label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.form-group {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 100%;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.booking-form input,
+.booking-form select {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: #FAFAFA;
+    transition: border 0.3s ease;
+    width: 100%;
 }
 
-section.hero {
-    background-color: var(--bg-light);
-    padding: 6rem 0;
+.booking-form input:focus,
+.booking-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--white);
 }
 
+.btn-submit {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    width: 100%;
+}
 
-/* Responsividade */
+.btn-submit:hover {
+    background-color: #005f91;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
 
 /* Tablets e dispositivos médios */
 @media (max-width: 992px) {
@@ -348,14 +316,13 @@ section.hero {
         padding: 3rem 0 2rem 0;
     }
 
-    .container .hero-layout {
-        display: flex;
+    .hero-layout {
         flex-direction: row;
         align-items: center;
         gap: 2rem;
     }
 
-    .container .hero-layout .hero-text {
+    .hero-text {
         flex: 0.9;
         margin-right: 1.5rem;
     }
@@ -372,7 +339,7 @@ section.hero {
         max-width: 100%;
     }
 
-    .container .hero-layout .hero-image {
+    .hero-image {
         flex: 1.1;
         min-width: 320px;
         max-width: 500px;
@@ -443,12 +410,12 @@ section.hero {
         padding: 3rem 0;
     }
 
-    .container .hero-layout {
+    .hero-layout {
         flex-direction: column;
         gap: 2rem;
     }
 
-    .container .hero-layout .hero-text {
+    .hero-text {
         margin-right: 0;
         margin-bottom: 0;
         text-align: center;
@@ -476,6 +443,7 @@ section.hero {
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+        min-width: auto;
     }
 
     /* Serviços mobile */
@@ -532,7 +500,6 @@ section.hero {
     .btn-submit {
         padding: 1rem;
         font-size: 1.05rem;
-        width: 100%;
     }
 
     /* Footer mobile */
@@ -540,6 +507,28 @@ section.hero {
         padding: 1.5rem 1rem;
         margin-top: 3rem;
         font-size: 0.9rem;
+    }
+
+    /* Melhorias de touch e interatividade mobile */
+    nav a,
+    .btn-nav,
+    .btn-primary,
+    .btn-submit {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-group {
+        margin-bottom: 1.8rem;
+    }
+
+    /* Evitar zoom automático no iOS */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
     }
 }
 
@@ -648,33 +637,6 @@ section.hero {
     }
 }
 
-/* Melhorias de touch e interatividade mobile */
-@media (max-width: 768px) {
-    /* Aumentar área de toque dos botões */
-    nav a,
-    .btn-nav,
-    .btn-primary,
-    .btn-submit {
-        min-height: 44px;
-        /* Área mínima recomendada para touch */
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Melhorar espaçamento entre elementos clicáveis */
-    .form-group {
-        margin-bottom: 1.8rem;
-    }
-
-    /* Evitar zoom automático no iOS */
-    input,
-    select,
-    textarea {
-        font-size: 16px !important;
-    }
-}
-
 /* Orientação paisagem em dispositivos móveis */
 @media (max-width: 768px) and (orientation: landscape) {
     section.hero {
@@ -690,12 +652,12 @@ section.hero {
         margin-bottom: 1rem;
     }
 
-    .container .hero-layout {
+    .hero-layout {
         flex-direction: row;
         align-items: center;
     }
 
-    .container .hero-layout .hero-text {
+    .hero-text {
         flex: 1;
         text-align: left;
         margin-right: 1.5rem;

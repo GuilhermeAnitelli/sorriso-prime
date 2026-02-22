@@ -75,6 +75,20 @@ nav a {
     margin: 0 1rem;
     font-weight: 600;
     transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:not(.btn-nav)::after {
+    content: '|';
+    position: absolute;
+    right: -1rem;
+    color: var(--text-light);
+    opacity: 0.5;
+}
+
+nav a:last-child::after,
+nav a.btn-nav::after {
+    content: none;
 }
 
 nav a:hover {
@@ -183,6 +197,12 @@ section.hero {
     text-align: center;
 }
 
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -257,7 +277,6 @@ section.hero {
 .booking-form input,
 .booking-form select {
     padding: 1rem;
-    margin-bottom: 1.5rem;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     font-family: var(--font-body);
